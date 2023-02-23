@@ -1,12 +1,21 @@
-<h1>User info</h1>
-  <div>
-    <%= image_tag user. get_profile_image(100,100) %>
-    <h4>name</h4>
-    <p><%= user.name %></p>
-    <h4>introduction</h4>
-    <p><%= user.introduction %></p>
-    <p></p>
-    <%= link_to "Edit", edit_user_path(user.id) %>
+<div class="container">
+  <div class="row">
+    <div class='col-md-3'>
+     <h1>User info</h1>
+     <%= image_tag user. get_profile_image(100,100) %>
+     <table class='table'>
+       <tbody>
+         <tr>
+          <th>name</th>
+          <%= user.name %>
+         </tr>
+         <tr>
+          <th>introduction</th>
+          <%= user.introduction %>
+         </tr>
+         <%= link_to "Edit", edit_user_path(user.id) %>
+     </tbody>
+    </table>
   </div>
     
   <h1>New book</h1>
@@ -17,3 +26,5 @@
         <%= f.text_area :body %>
       <%= f.submit 'Create Book' %>
   <% end %>
+  </div>
+</div>
