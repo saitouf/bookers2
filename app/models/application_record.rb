@@ -3,6 +3,12 @@ class ApplicationRecord < ActiveRecord::Base
   
   has_one_attached :profile_image
   
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :image, presence: true
+  validates :name, presence: true
+  validates :introduction, presence: true
+  
   def get_profile_image(width, height)
   unless profile_image.attached?
     file_path = Rails.root.join('app/assets/images/no_image.jpg')
