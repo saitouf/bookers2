@@ -16,7 +16,7 @@
             <%= @books.user.name %>
             <% end %>
             </td>
-            <td><%= @books.title %></td>
+            <td><%= link_to @books.title, book_path(@books.id) %></td>
             <td><%= @books.body %></td>
             <% if @books.user == current_user %>
             <td><%= link_to "Edit", edit_book_path(@books.id), class: "btn btn-sm btn-success edit_book_id" %></td>
